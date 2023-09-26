@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>PiggyBank</title>
+  </head>
+  <body>
+
+    <div class="modal modal--error" id="data-error-modal">
+      <h2>Attenzione</h2>
+      <p>I dati inseriti non sono corretti</p>
+      <p>Inserire un valore numerico</p>
+      <button class="modal-close"><i class="fa fa-solid fa-x"></i></button>
+    </div>
+
+    <div class="modal modal--error" id="negative-balance-modal">
+      <h2>Attenzione</h2>
+      <p>Il tuo conto è in rosso</p>
+      <p>Fai un versamento il prima possibile</p>
+      <button class="modal-close"><i class="fa fa-solid fa-x"></i></button>
+    </div>
+
+    <header class="container header">
+      <div class="app-data">
+        <div class="logo"><img src="./images/logo.jpg" alt="Logo" /></div>
+        <h1>PiggyBank</h1>
+      </div>
+      <div class="user-data">
+        <div class="user-avatar">
+          <img src="./images/avatar.png" alt="Avatar" />
+        </div>
+        <p class="user-name"></p>
+        <p class="user-balance"></p>
+      </div>
+    </header>
+    <main class="container main">
+      <div class="controls">
+        <select name="unit" id="unit">
+          <option value="EUR" selected>€</option>
+          <option value="USD">$</option>
+          <option value="GBP">£</option>
+          <!-- Filled with JS -->
+        </select>
+        <input
+          type="text"
+          name="transaction-value"
+          id="transaction-value"
+          placeholder="Insert value"
+        />
+        <input
+          type="text"
+          name="transaction-description"
+          id="transaction-description"
+          placeholder="Insert description"
+        />
+        <button type="button" name="add-transaction" id="add-transaction">
+          Add transaction
+        </button>
+      </div>
+      <div class="container--small transactions" id="transactions">
+        <!-- Filled with JS -->
+      </div>
+    </main>
+    <footer class="container footer">
+      <p class="balance-negative">Outcomes: <span class="negative" id="balance-negative"></span></p>
+      <p class="balance-positive"> Incomes: <span class="positive" id="balance-positive"></span></p>
+      <p class="balance-total">Balance: <span id="balance-total"></span></p>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
